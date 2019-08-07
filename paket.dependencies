@@ -1,0 +1,10 @@
+source https://www.nuget.org/api/v2
+
+framework: >= net461
+nuget FSharp.Core
+nuget MouseKeyHook 5.6.0
+
+group Build
+source https://www.nuget.org/api/v2
+
+nuget FAKE
