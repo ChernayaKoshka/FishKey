@@ -4,6 +4,12 @@
     <TargetFramework>net461</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FishKey.Core\FishKey.Core.fsproj">
+      <Name>FishKey.Core.fsproj</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Console.fs" />
     <Compile Include="FishKey.fs" />
     <None Include="App.config" />
   </ItemGroup>
