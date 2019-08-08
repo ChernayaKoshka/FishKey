@@ -9,6 +9,12 @@ open System.Windows.Forms
 open Gma.System.MouseKeyHook
 
 open FishKey.Core
+open PInvoke
+open System.Text.RegularExpressions
+
+let getActiveTitle() =
+    User32.GetForegroundWindow()
+    |> User32.GetWindowText
 
 let createDirIfMissing dir =
     if dir |> Directory.Exists |> not then
@@ -33,8 +39,9 @@ let loadHotkeysFromAssembly path =
                 (hotkey.KeyTrigger,
                     (fun () ->
                         try
-                            method.Invoke(null, null)
-                            |> ignore
+                            if Regex.IsMatch(getActiveTitle(), hotkey.TitlePattern) then
+                                method.Invoke(null, null)
+                                |> ignore
                         with
                         | ex -> printfn "%A" ex))
                 |> Ok

@@ -3,6 +3,17 @@ NUGET
   remote: https://www.nuget.org/api/v2
     FSharp.Core (4.7)
     MouseKeyHook (5.6)
+    PInvoke.Kernel32 (0.5.184)
+      PInvoke.Windows.Core (>= 0.5.184)
+    PInvoke.User32 (0.5.184)
+      PInvoke.Kernel32 (>= 0.5.184)
+      PInvoke.Windows.Core (>= 0.5.184)
+      PInvoke.Windows.ShellScalingApi (>= 0.5.184)
+      Validation (>= 2.4.15)
+    PInvoke.Windows.Core (0.5.184)
+    PInvoke.Windows.ShellScalingApi (0.5.184)
+      PInvoke.Windows.Core (>= 0.5.184)
+    Validation (2.4.22)
 
 GROUP Build
 NUGET
