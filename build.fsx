@@ -46,7 +46,7 @@ let runDotnet workingDir args =
 // --------------------------------------------------------------------------------------
 
 Target "Clean" (fun _ ->
-    CleanDirs [buildDir]
+    CleanDirs [buildDir; "Sample"]
 )
 
 Target "InstallDotNetCLI" (fun _ ->
