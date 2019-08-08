@@ -81,5 +81,8 @@ let main argv =
         printfn "debugmode set, press any key to continue..."
         Console.ReadLine() |> ignore
 
-    Application.Run(new ApplicationContext())
+
+    let appctx = new ApplicationContext()
+    Application.Run(appctx)
+
     0 // return an integer exit code
