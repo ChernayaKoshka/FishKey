@@ -1,3 +1,5 @@
+#nowarn "FAKE0001"
+
 // --------------------------------------------------------------------------------------
 // FAKE build script
 // --------------------------------------------------------------------------------------
@@ -85,6 +87,7 @@ Target "SetupSample" (fun _ ->
         copy (Path.Combine("Sample", Path.GetFileName(path))) path)
 
     copy "Sample/hotkeys/FishKey.Sample.dll" "FishKey.Sample/bin/Debug/net461/FishKey.Sample.dll"
+    copy "Sample/hotkeys/FishKey.CSharpSample.dll" "FishKey.CSharpSample/bin/Debug/net461/FishKey.CSharpSample.dll"
 
     )
 
@@ -93,7 +96,6 @@ Target "SetupSample" (fun _ ->
 // --------------------------------------------------------------------------------------
 
 "Clean"
-  ==> "InstallDotNetCLI"
   ==> "Restore"
   ==> "Build"
   ==> "SetupSample"

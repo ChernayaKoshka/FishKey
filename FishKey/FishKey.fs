@@ -56,26 +56,30 @@ let hotkeysToDictionary =
         dict.Add(hotkey, Action(method))
         dict) (new Dictionary<Combination, Action>())
 
+let extensionFilter str =
+    (str = ".dll" || str = ".exe")
+
 [<EntryPoint>]
 let main argv =
+    #if !DEBUG
+    Console.Hide()
+    |> ignore
+    #endif
+
     createDirIfMissing "hotkeys"
 
     printfn "Loading hotkeys from 'hotkeys' directory."
     Directory.GetFiles("hotkeys")
-    |> Seq.filter (Path.GetExtension >> (=) ".dll")
+    |> Seq.filter (Path.GetExtension >> extensionFilter)
     |> Seq.collect loadHotkeysFromAssembly
     |> hotkeysToDictionary
     |> Hook.GlobalEvents().OnCombination
     printfn "Done loading hotkeys from 'hotkeys' directory."
 
     if argv.Length = 1 && argv.[0] = "debugmode" then
+        Console.Show() |> ignore
         printfn "debugmode set, press any key to continue..."
         Console.ReadLine() |> ignore
-
-    #if !DEBUG
-    Console.Hide()
-    |> ignore
-    #endif
 
     Application.Run(new ApplicationContext())
     0 // return an integer exit code

@@ -9,6 +9,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FishKey", "FishKey\FishKey.
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FishKey.Sample", "FishKey.Sample\FishKey.Sample.fsproj", "{E11F28F7-9E1B-40F2-8D29-DBEECB0678CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FishKey.CSharpSample", "FishKey.CSharpSample\FishKey.CSharpSample.csproj", "{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{E11F28F7-9E1B-40F2-8D29-DBEECB0678CE}.Release|x64.Build.0 = Release|Any CPU
 		{E11F28F7-9E1B-40F2-8D29-DBEECB0678CE}.Release|x86.ActiveCfg = Release|Any CPU
 		{E11F28F7-9E1B-40F2-8D29-DBEECB0678CE}.Release|x86.Build.0 = Release|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Debug|x64.Build.0 = Debug|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Debug|x86.Build.0 = Debug|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Release|x64.ActiveCfg = Release|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Release|x64.Build.0 = Release|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Release|x86.ActiveCfg = Release|Any CPU
+		{29DE5F6E-06EC-4F4B-8A39-7192F25FBBA5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
