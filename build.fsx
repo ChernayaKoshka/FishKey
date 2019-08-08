@@ -67,6 +67,27 @@ Target "Build" (fun _ ->
     )
 )
 
+open System.IO
+let createDirIfMissing path =
+    if path |> Directory.Exists |> not then
+        Directory.CreateDirectory(path)
+        |> ignore
+
+let copy location from = File.Copy(from, location)
+
+Target "SetupSample" (fun _ ->
+    createDirIfMissing "Sample"
+    createDirIfMissing "Sample/hotkeys"
+
+    !! @"FishKey/bin/Debug/net461/*.dll"
+    ++ @"FishKey/bin/Debug/net461/*.exe"
+    |> Seq.iter (fun path ->
+        copy (Path.Combine("Sample", Path.GetFileName(path))) path)
+
+    copy "Sample/hotkeys/FishKey.Sample.dll" "FishKey.Sample/bin/Debug/net461/FishKey.Sample.dll"
+
+    )
+
 // --------------------------------------------------------------------------------------
 // Build order
 // --------------------------------------------------------------------------------------
@@ -75,5 +96,6 @@ Target "Build" (fun _ ->
   ==> "InstallDotNetCLI"
   ==> "Restore"
   ==> "Build"
+  ==> "SetupSample"
 
 RunTargetOrDefault "Build"
